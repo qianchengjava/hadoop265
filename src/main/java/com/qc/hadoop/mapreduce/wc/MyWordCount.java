@@ -1,11 +1,10 @@
-package com.msb.hadoop.mapreduce.wc;
+package com.qc.hadoop.mapreduce.wc;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
-import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.input.TextInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
 import org.apache.hadoop.util.GenericOptionsParser;
@@ -43,11 +42,11 @@ public class MyWordCount {
 
 
 
-        job.setJar("C:\\Users\\admin\\IdeaProjects\\msbhadoop\\target\\hadoop-hdfs-1.0-0.1.jar");
+        //job.setJar("C:\\Users\\admin\\IdeaProjects\\msbhadoop\\target\\hadoop-hdfs-1.0-0.1.jar");
         //必须必须写的
         job.setJarByClass(MyWordCount.class);
 
-        job.setJobName("mashibing");
+        job.setJobName("qiancheng_wc_job");
 
         Path infile = new Path(othargs[0]);
         TextInputFormat.addInputPath(job, infile);

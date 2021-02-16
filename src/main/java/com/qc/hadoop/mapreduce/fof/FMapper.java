@@ -1,4 +1,4 @@
-package com.msb.hadoop.mapreduce.fof;
+package com.qc.hadoop.mapreduce.fof;
 
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.LongWritable;

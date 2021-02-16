@@ -1,6 +1,5 @@
-package com.msb.hadoop.mapreduce.fof;
+package com.qc.hadoop.mapreduce.fof;
 
-import com.msb.hadoop.mapreduce.topn.*;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.IntWritable;

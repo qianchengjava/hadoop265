@@ -1,4 +1,4 @@
-package com.msb.hadoop.mapreduce.topn;
+package com.qc.hadoop.mapreduce.topn;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
@@ -7,8 +7,6 @@ import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.input.TextInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
 import org.apache.hadoop.util.GenericOptionsParser;
-
-import java.io.IOException;
 
 public class MyTopN {
 

@@ -1,6 +1,5 @@
-package com.msb.hadoop.mapreduce.topn;
+package com.qc.hadoop.mapreduce.topn;
 
-import org.apache.hadoop.io.RawComparator;
 import org.apache.hadoop.io.WritableComparable;
 import org.apache.hadoop.io.WritableComparator;
 

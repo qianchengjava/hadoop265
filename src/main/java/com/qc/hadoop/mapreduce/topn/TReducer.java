@@ -1,4 +1,4 @@
-package com.msb.hadoop.mapreduce.topn;
+package com.qc.hadoop.mapreduce.topn;
 
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;

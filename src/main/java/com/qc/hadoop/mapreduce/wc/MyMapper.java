@@ -1,4 +1,4 @@
-package com.msb.hadoop.mapreduce.wc;
+package com.qc.hadoop.mapreduce.wc;
 
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;

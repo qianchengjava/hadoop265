@@ -1,4 +1,4 @@
-package com.msb.hadoop.mapreduce.topn;
+package com.qc.hadoop.mapreduce.topn;
 
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.IntWritable;
@@ -7,7 +7,6 @@ import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
 import org.apache.hadoop.util.StringUtils;
 
-import javax.annotation.processing.Filer;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;

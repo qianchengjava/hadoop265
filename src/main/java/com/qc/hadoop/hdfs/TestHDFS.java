@@ -1,4 +1,4 @@
-package com.msb.hadoop.hdfs;
+package com.qc.hadoop.hdfs;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.*;
@@ -43,7 +43,7 @@ public class TestHDFS {
     public void upload() throws Exception {
 
         BufferedInputStream input = new BufferedInputStream(new FileInputStream(new File("./data/hello.txt")));
-        Path outfile   = new Path("/msb/out.txt");
+        Path outfile   = new Path("/qc/out.txt");
         FSDataOutputStream output = fs.create(outfile);
 
         IOUtils.copyBytes(input,output,conf,true);

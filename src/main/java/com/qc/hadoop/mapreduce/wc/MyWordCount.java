@@ -49,7 +49,9 @@ public class MyWordCount {
         //必须必须写的
         job.setJarByClass(MyWordCount.class);
 
-        job.setJobName("qiancheng_wc_job");
+        String jobName = othargs[2];
+        job.setJobName(jobName);
+//        job.setJobName("qiancheng_wc_job1");
 
         Path infile = new Path(othargs[0]);
         TextInputFormat.addInputPath(job, infile);

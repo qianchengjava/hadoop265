@@ -26,6 +26,15 @@ public class MyMapper extends Mapper<Object, Text, Text, IntWritable> {
         StringTokenizer itr = new StringTokenizer(value.toString());
         while (itr.hasMoreTokens()) {
             word.set(itr.nextToken());
+            /**
+             * context
+             * hello 1
+             * hello 1
+             * world 1
+             * qian 1
+             * cheng 1
+             * hello 1
+             */
             context.write(word, one);
         }
     }

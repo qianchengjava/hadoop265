@@ -6,6 +6,15 @@ import org.apache.hadoop.mapreduce.Reducer;
 
 import java.io.IOException;
 
+/**
+ *        Reducer<Text, IntWritable, Text, IntWritable>
+ *              * hello    1          hello  3
+ *              * hello    1          world  1
+ *              * world    1          qian   1
+ *              * qian     1          cheng  1
+ *              * cheng    1
+ *              * hello    1
+ */
 public class MyReducer extends Reducer<Text, IntWritable, Text, IntWritable> {
 
     private IntWritable result = new IntWritable();

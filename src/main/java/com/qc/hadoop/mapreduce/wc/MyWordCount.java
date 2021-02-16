@@ -9,6 +9,9 @@ import org.apache.hadoop.mapreduce.lib.input.TextInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
 import org.apache.hadoop.util.GenericOptionsParser;
 
+/**
+ * com.qc.hadoop.mapreduce.wc.MyWordCount
+ */
 public class MyWordCount {
 
 

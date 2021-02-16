@@ -35,6 +35,7 @@ public class MyMapper extends Mapper<Object, Text, Text, IntWritable> {
              * cheng 1
              * hello 1
              */
+            System.out.println("My Mapper word:" + word);
             context.write(word, one);
         }
     }

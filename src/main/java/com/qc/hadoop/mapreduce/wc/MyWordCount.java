@@ -5,15 +5,18 @@ import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
+import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.input.TextInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
 import org.apache.hadoop.util.GenericOptionsParser;
+
+import java.util.Collection;
+import java.util.List;
 
 /**
  * com.qc.hadoop.mapreduce.wc.MyWordCount
  */
 public class MyWordCount {
-
 
 
     //bin/hadoop command [genericOptions] [commandOptions]
@@ -24,34 +27,25 @@ public class MyWordCount {
     public static void main(String[] args) throws Exception {
 
         Configuration conf = new Configuration(true);
-
-        GenericOptionsParser parser = new GenericOptionsParser(conf, args);  //工具类帮我们把-D 等等的属性直接set到conf，会留下commandOptions
+        //工具类帮我们把-D 等等的属性直接set到conf，会留下commandOptions
+        GenericOptionsParser parser = new GenericOptionsParser(conf, args);
         String[] othargs = parser.getRemainingArgs();
 
         //让框架知道是windows异构平台运行
-        conf.set("mapreduce.app-submission.cross-platform","true");
+        conf.set("mapreduce.app-submission.cross-platform", "true");
 
-//        conf.set("mapreduce.framework.name","local");
-//        System.out.println(conf.get("mapreduce.framework.name"));
-
+        //conf.set("mapreduce.framework.name","local");
+        //System.out.println(conf.get("mapreduce.framework.name"));
         Job job = Job.getInstance(conf);
-
-
-//        FileInputFormat.setMinInputSplitSize(job,2222);
-//        job.setInputFormatClass(ooxx.class);
-
-
-
-
-
-
+        FileInputFormat.setMinInputSplitSize(job, 2);
+        // job.setInputFormatClass(ooxx.class);
         //job.setJar("C:\\Users\\admin\\IdeaProjects\\msbhadoop\\target\\hadoop-hdfs-1.0-0.1.jar");
         //必须必须写的
         job.setJarByClass(MyWordCount.class);
 
         String jobName = othargs[2];
         job.setJobName(jobName);
-//        job.setJobName("qiancheng_wc_job1");
+        //job.setJobName("qiancheng_wc_job1");
 
         Path infile = new Path(othargs[0]);
         TextInputFormat.addInputPath(job, infile);
@@ -65,7 +59,7 @@ public class MyWordCount {
         job.setMapOutputValueClass(IntWritable.class);
         job.setReducerClass(MyReducer.class);
 
-//        job.setNumReduceTasks(2);
+        // job.setNumReduceTasks(2);
         // Submit the job, then poll for progress until the job is complete
         job.waitForCompletion(true);
 

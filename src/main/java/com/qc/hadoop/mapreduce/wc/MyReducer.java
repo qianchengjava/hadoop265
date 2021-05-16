@@ -24,6 +24,7 @@ public class MyReducer extends Reducer<Text, IntWritable, Text, IntWritable> {
     //hello 1
     //hello 1
     //hello 1
+    @Override
     public void reduce(Text key, Iterable<IntWritable> values,/* 111111*/
                        Context context) throws IOException, InterruptedException {
         int sum = 0;
